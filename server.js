@@ -8,6 +8,7 @@ app.use(express.json());
 
 app.use("/users", require("./api/users.js"));
 app.use("/playlists", require("./api/playlists.js"));
+app.use("/tracks", require("./api/tracks.js"));
 
 app.use((req, res, next) => {
   next({ status: 404, message: "Endpoint not found" });
