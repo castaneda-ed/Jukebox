@@ -33,7 +33,6 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   const { name, description, ownerId, trackIds } = req.body;
-  const tracks = trackIds.map((id) => ({ id: +id }));
 
   if (!name || !description || !ownerId || !trackIds) {
     return next({
@@ -41,6 +40,8 @@ router.post("/", async (req, res, next) => {
       message: "Provide name, description, owner and tracks for the Playlist",
     });
   }
+
+  const tracks = trackIds.map((id) => ({ id: +id }));
 
   try {
     const playlist = await prisma.playlist.create({

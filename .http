@@ -10,4 +10,15 @@ GET {{host}}/users/3
 GET {{host}}/playlists
 
 ### Get single playlist and it's songs
-GET {{host}}/playlists/9
+GET {{host}}/playlists/10
+
+### Post a playlist with tracks
+POST {{host}}/playlists
+Content-Type: application/json
+
+{
+    "name": "My new playlist",
+    "description": "This is the new playlist that I created for testing",
+    "ownerId": 1,
+    "trackIds": [20,10,25]
+}
