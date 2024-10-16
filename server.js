@@ -7,6 +7,7 @@ app.use(require("morgan")("dev"));
 app.use(express.json());
 
 app.use("/users", require("./api/users.js"));
+app.use("/playlists", require("./api/playlists.js"));
 
 app.use((req, res, next) => {
   next({ status: 404, message: "Endpoint not found" });

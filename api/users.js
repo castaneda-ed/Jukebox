@@ -17,7 +17,7 @@ router.get("/:id", async (req, res, next) => {
   const { id } = req.params;
 
   try {
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findUniqueOrThrow({
       where: { id: +id },
       include: { playlists: true },
     });

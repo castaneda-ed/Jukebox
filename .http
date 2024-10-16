@@ -2,3 +2,12 @@
 
 ### Get all the users
 GET {{host}}/users
+
+### Get single user and playlists
+GET {{host}}/users/3
+
+### Get all the available playlists
+GET {{host}}/playlists
+
+### Get single playlist and it's songs
+GET {{host}}/playlists/9
